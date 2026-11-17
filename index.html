@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the EU AI Act actually requires on gender bias in high-risk AI systems, and where those rules stop</title>
+<meta name="description" content="A multimedia explainer by Khatimat Abilova on gender bias, the EU AI Act and the 2026 Digital Omnibus on AI.">
+<style>
+:root{--ink:#1c1c21;--muted:#4f4f57;--paper:#fbfaf7;--card:#fff;--line:#d8d4cb;--soft:#efece5;--accent:#8c1d40;--accent-soft:#f6e9ed;--max:44rem}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.0625rem/1.7 Georgia,"Times New Roman",serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.5rem 1rem;z-index:20}
+.skip:focus{left:0}
+h1,h2,h3,h4,.sans,nav,button,input,.chip,.lens,figcaption,.kicker,.byline{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.nav{position:sticky;top:0;z-index:10;background:rgba(251,250,247,.97);border-bottom:1px solid var(--line)}
+.nav ul{display:flex;gap:.25rem;margin:0 auto;padding:.25rem .75rem;list-style:none;max-width:70rem;overflow-x:auto;white-space:nowrap}
+.nav a{display:block;padding:.55rem .8rem;color:var(--ink);text-decoration:none;font-size:.9rem;font-weight:600;border-bottom:3px solid transparent}
+.nav a:hover{border-bottom-color:var(--accent)}
+.nav a.on{border-bottom-color:var(--accent);color:var(--accent)}
+section{padding:3.5rem 1.25rem}
+.wrap{max-width:var(--max);margin:0 auto}
+.wide{max-width:70rem;margin:0 auto}
+.kicker{color:var(--accent);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;margin:0 0 .75rem}
+#top{padding-top:2.5rem;border-bottom:1px solid var(--line)}
+.hero{display:grid;gap:2rem;align-items:center;grid-template-columns:1fr}
+@media(min-width:60rem){.hero{grid-template-columns:1.15fr .85fr}}
+h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.12;margin:0 0 1rem;letter-spacing:-.01em}
+.stand{font-size:1.25rem;line-height:1.5;color:var(--muted);margin:0 0 1.25rem}
+.byline{font-size:.9rem;color:var(--muted);margin:0}
+.byline strong{color:var(--ink)}
+.hero svg{width:100%;height:auto;display:block;background:var(--card);border:1px solid var(--line);border-radius:6px}
+h2{font-size:1.65rem;line-height:1.25;margin:2.25rem 0 .75rem}
+#article h2:first-child{margin-top:0}
+.lede{font-size:1.35rem;line-height:1.55;font-weight:600}
+.lede+p{color:var(--muted)}
+.pull{margin:1.75rem 0;padding:.25rem 0 .25rem 1.25rem;border-left:5px solid var(--accent);font-size:1.4rem;line-height:1.4;font-style:italic}
+.pull p{margin:0 0 .5rem}
+.pull footer{font:600 .85rem/1.4 system-ui,sans-serif;font-style:normal;color:var(--muted)}
+.box{margin:2.5rem 0 0;padding:1.25rem 1.5rem;background:var(--accent-soft);border:2px solid var(--accent);border-radius:6px}
+.box h2{margin-top:0;font-size:1.3rem}
+.box p{margin:0}
+.band{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{max-width:var(--max);margin:0 auto 1.5rem}
+.sec-head h2{margin:0 0 .5rem;font-size:2rem}
+.sec-head p{margin:0;color:var(--muted)}
+/* carousel */
+.car{position:relative;max-width:70rem;margin:0 auto}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:0;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.track::-webkit-scrollbar{display:none}
+.car:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.card{flex:0 0 100%;scroll-snap-align:start;margin:0;display:grid;grid-template-columns:1fr;gap:1.5rem;padding:1.5rem;align-items:center}
+@media(min-width:48rem){.card{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);padding:2.5rem 3rem;gap:3rem}}
+.gfx svg{width:100%;height:auto;max-height:18rem;display:block}
+.lens{display:inline-block;background:var(--accent);color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .65rem;border-radius:999px;margin:0 0 1rem}
+.card blockquote{margin:0 0 1rem;font-size:clamp(1.15rem,2.4vw,1.6rem);line-height:1.45}
+.card blockquote p{margin:0}
+.card figcaption{font-size:.9rem;color:var(--muted);line-height:1.4}
+.card figcaption strong{color:var(--ink)}
+.ctrl{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem}
+.ctrl button.arr{width:2.75rem;height:2.75rem;border-radius:50%;border:2px solid var(--ink);background:var(--card);color:var(--ink);font-size:1.2rem;cursor:pointer}
+.ctrl button.arr:hover{background:var(--ink);color:#fff}
+.dots{display:flex;gap:.2rem}
+.dots button{width:2rem;height:2rem;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center}
+.dots button::before{content:"";width:.7rem;height:.7rem;border-radius:50%;border:2px solid var(--ink);background:transparent}
+.dots button[aria-current="true"]::before{background:var(--accent);border-color:var(--accent)}
+/* myths */
+.myths{display:grid;gap:1rem;grid-template-columns:1fr;max-width:70rem;margin:0 auto}
+@media(min-width:48rem){.myths{grid-template-columns:1fr 1fr}}
+.myth{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.myth>button{display:block;width:100%;text-align:left;padding:1.1rem 1.25rem;background:none;border:0;cursor:pointer;font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.35}
+.myth>button .m{display:block;color:var(--accent);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.25rem}
+.myth>button .h{display:block;font-size:.85rem;color:var(--muted);font-weight:600;margin-top:.5rem}
+.myth>button[aria-expanded="true"] .h{display:none}
+.panel{padding:0 1.25rem 1.25rem;border-top:1px dashed var(--line)}
+.panel h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.07em;margin:1rem 0 .25rem;color:var(--muted)}
+.panel p{margin:0;font-size:1rem;line-height:1.6}
+.chip{display:inline-block;margin-top:1rem;padding:.2rem .7rem;border-radius:999px;font-size:.82rem;font-weight:700;border:2px solid var(--ink)}
+.chip.law{background:var(--ink);color:#fff}
+.chip.exp{background:#fff;color:var(--ink)}
+.chip.part{background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
+/* timeline */
+.tl{list-style:none;margin:0 auto;padding:0 0 0 1.75rem;max-width:var(--max);border-left:3px solid var(--ink)}
+.tl li{position:relative;padding:0 0 1.75rem 1.25rem}
+.tl li::before{content:"";position:absolute;left:-2.35rem;top:.35rem;width:1rem;height:1rem;border-radius:50%;background:var(--paper);border:3px solid var(--accent)}
+.tl time{display:block;font:700 1.15rem/1.3 system-ui,sans-serif;color:var(--accent)}
+.tl h3{margin:.1rem 0 .25rem;font-size:1.05rem}
+.tl p{margin:0;font-size:1rem;color:var(--muted);line-height:1.55}
+.note{max-width:var(--max);margin:1rem auto 0;padding:1rem 1.25rem;border-left:5px solid var(--accent);background:var(--card);font-size:.98rem}
+/* chat */
+.chat{max-width:var(--max);margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.25rem}
+.notice{font:600 .85rem/1.4 system-ui,sans-serif;background:var(--soft);padding:.5rem .75rem;border-radius:4px;margin:0 0 1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem}
+.chips button{font-size:.88rem;padding:.4rem .8rem;border:2px solid var(--accent);color:var(--accent);background:#fff;border-radius:999px;cursor:pointer;font-weight:600}
+.chips button:hover{background:var(--accent-soft)}
+.log{min-height:6rem;max-height:24rem;overflow-y:auto;display:flex;flex-direction:column;gap:.75rem;margin-bottom:1rem}
+.msg{padding:.7rem .95rem;border-radius:8px;max-width:92%;font-size:1rem;line-height:1.55}
+.msg.u{align-self:flex-end;background:var(--ink);color:#fff;font-family:system-ui,sans-serif}
+.msg.b{align-self:flex-start;background:var(--soft)}
+.chat form{display:flex;gap:.5rem}
+.chat input{flex:1;min-width:0;padding:.7rem .9rem;border:2px solid var(--ink);border-radius:6px;font-size:1rem}
+.chat form button{padding:.7rem 1.1rem;background:var(--accent);color:#fff;border:2px solid var(--accent);border-radius:6px;font-weight:700;font-size:1rem;cursor:pointer}
+/* refs */
+.refs{max-width:var(--max);margin:0 auto;font-size:1rem}
+.refs h3{font-size:1.1rem;margin:1.75rem 0 .5rem}
+.refs p{margin:0 0 .9rem;padding-left:2rem;text-indent:-2rem;overflow-wrap:anywhere}
+footer.site{padding:2rem 1.25rem;border-top:1px solid var(--line);font:.9rem/1.5 system-ui,sans-serif;color:var(--muted)}
+footer.site p{max-width:var(--max);margin:0 auto}
+@media print{
+ .nav,.ctrl,#ask,.skip,.hero svg{display:none!important}
+ body{background:#fff;font-size:11pt}
+ section{padding:1rem 0;break-inside:auto}
+ .track{display:block;overflow:visible;border:0}
+ .card{break-inside:avoid;border-bottom:1px solid #999;grid-template-columns:1fr 2fr;padding:.75rem 0}
+ .panel[hidden]{display:block!important}
+ .myth{break-inside:avoid}
+ .myth>button .h{display:none}
+ a{color:#000}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#article">Skip to the article</a>
+<header class="nav">
+<nav aria-label="Sections"><ul>
+<li><a href="#top">Top</a></li>
+<li><a href="#article">Article</a></li>
+<li><a href="#points">Points of view</a></li>
+<li><a href="#myths">Myth vs the law</a></li>
+<li><a href="#timeline">Timeline</a></li>
+<li><a href="#ask">Ask the sources</a></li>
+<li><a href="#references">References</a></li>
+</ul></nav>
+</header>
+<main>
+<section id="top"><div class="wide hero">
+<div>
+<p class="kicker">Explainer &middot; [Section label]</p>
+<h1>What the EU AI Act actually requires on gender bias in high-risk AI systems, and where those rules stop</h1>
+<p class="stand">A 2026 amendment changed how companies may check their AI for bias. Two experts explain what the law now says, what it leaves out, and why compliance is not the same as fairness.</p>
+<p class="byline">By <strong>Khatimat Abilova</strong> &middot; [Publication date]</p>
+</div>
+<svg viewBox="0 0 520 340" role="img" aria-label="Abstract graphic: a grid of squares in which some cells are missing and one diagonal band is highlighted, crossed by a tilted balance beam.">
+<rect x="40" y="40" width="36" height="36" fill="#cfcac0"/>
+<rect x="88" y="40" width="36" height="36" fill="#cfcac0"/>
+<rect x="136" y="40" width="36" height="36" fill="var(--accent)"/>
+<rect x="184" y="40" width="36" height="36" fill="var(--accent)"/>
+<rect x="232" y="40" width="36" height="36" fill="#cfcac0"/>
+<rect x="280" y="40" width="36" height="36" fill="#cfcac0"/>
+<rect x="328" y="40" width="36" height="36" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="376" y="40" width="36" height="36" fill="#cfcac0"/>
+<rect x="424" y="40" width="36" height="36" fill="#cfcac0"/>
+<rect x="40" y="88" width="36" height="36" fill="#cfcac0"/>
+<rect x="88" y="88" width="36" height="36" fill="#cfcac0"/>
+<rect x="136" y="88" width="36" height="36" fill="#cfcac0"/>
+<rect x="184" y="88" width="36" height="36" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="232" y="88" width="36" height="36" fill="var(--accent)"/>
+<rect x="280" y="88" width="36" height="36" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="328" y="88" width="36" height="36" fill="#cfcac0"/>
+<rect x="376" y="88" width="36" height="36" fill="#cfcac0"/>
+<rect x="424" y="88" width="36" height="36" fill="#cfcac0"/>
+<rect x="40" y="136" width="36" height="36" fill="#cfcac0"/>
+<rect x="88" y="136" width="36" height="36" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="136" y="136" width="36" height="36" fill="#cfcac0"/>
+<rect x="184" y="136" width="36" height="36" fill="#cfcac0"/>
+<rect x="232" y="136" width="36" height="36" fill="var(--accent)"/>
+<rect x="280" y="136" width="36" height="36" fill="var(--accent)"/>
+<rect x="328" y="136" width="36" height="36" fill="#cfcac0"/>
+<rect x="376" y="136" width="36" height="36" fill="#cfcac0"/>
+<rect x="424" y="136" width="36" height="36" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="40" y="184" width="36" height="36" fill="#cfcac0"/>
+<rect x="88" y="184" width="36" height="36" fill="#cfcac0"/>
+<rect x="136" y="184" width="36" height="36" fill="#cfcac0"/>
+<rect x="184" y="184" width="36" height="36" fill="#cfcac0"/>
+<rect x="232" y="184" width="36" height="36" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="280" y="184" width="36" height="36" fill="var(--accent)"/>
+<rect x="328" y="184" width="36" height="36" fill="var(--accent)"/>
+<rect x="376" y="184" width="36" height="36" fill="#cfcac0"/>
+<rect x="424" y="184" width="36" height="36" fill="#cfcac0"/>
+<rect x="40" y="232" width="36" height="36" fill="#cfcac0"/>
+<rect x="88" y="232" width="36" height="36" fill="#cfcac0"/>
+<rect x="136" y="232" width="36" height="36" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="184" y="232" width="36" height="36" fill="#cfcac0"/>
+<rect x="232" y="232" width="36" height="36" fill="#cfcac0"/>
+<rect x="280" y="232" width="36" height="36" fill="#cfcac0"/>
+<rect x="328" y="232" width="36" height="36" fill="var(--accent)"/>
+<rect x="376" y="232" width="36" height="36" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 4"/>
+<rect x="424" y="232" width="36" height="36" fill="#cfcac0"/>
+<line x1="20" y1="300" x2="500" y2="270" stroke="var(--ink)" stroke-width="5"/>
+<polygon points="260,285 240,330 280,330" fill="var(--ink)"/>
+<circle cx="20" cy="300" r="7" fill="var(--ink)"/><circle cx="500" cy="270" r="7" fill="var(--ink)"/>
+</svg>
+</div></section>
+
+<section id="article"><div class="wrap">
+<p class="lede">“Legal compliance does not necessarily mean that an AI system is completely free from discrimination,” said Valentina Maglietta, a researcher at the Gender Five Plus NGO in Brussels.</p>
+<p>That warning runs through the debate over the European Union’s Artificial Intelligence Act. A 2026 amending regulation changed how companies may check their systems for bias. Yet both experts interviewed for this feature said that compliance cannot, by itself, promise fair outcomes for women.</p>
+<h2>What the law covers</h2>
+<p>The Act, Regulation (EU) 2024/1689, sets harmonised rules for AI, with a high level of protection for health, safety and fundamental rights. This feature concerns its rules for high-risk systems. The 2026 amendment, known as the Digital Omnibus on AI, says its simplification measures should not reduce that protection.</p>
+<p>Gender has no separate rulebook, on this account. Jordy Benooit, who works in EU public affairs, said gender discrimination is covered mainly through broader provisions on discrimination and fundamental rights, not through a dedicated gender-equality framework. Maglietta agreed, saying the Act is “primarily a regulatory framework for artificial intelligence”, not a comprehensive gender-equality instrument.</p>
+<p>Maglietta called gender bias in AI “not simply a technical problem” but a human-rights issue, one that becomes particularly serious when decisions are automated or difficult to challenge. Benooit pointed to recruitment, healthcare and access to essential services as the likeliest trouble spots. A hiring tool might favour candidates who resemble past successful employees, he said. If a company has traditionally hired more men for senior positions, the system could reproduce that pattern.</p>
+<h2>What providers must do</h2>
+<p>Benooit said Article 10, on data governance, requires providers of high-risk systems to examine datasets for biases and take measures to detect, prevent and mitigate them, and that Article 10(3) addresses how representative datasets are. The amended Act itself confirms the link: the new Article 4a refers to bias detection and correction under Article 10(2), points (f) and (g).</p>
+<p>Companies, Benooit said, “cannot simply collect data and assume that it is neutral”; they must examine whether women are underrepresented or disadvantaged. Maglietta went further. A large dataset is not enough, she said; the question is who is represented and whose experiences are missing, including where gender overlaps with ethnicity, disability or social background.</p>
+<h2>The 2026 change</h2>
+<p>The amending regulation inserts Article 4a. Providers of high-risk systems may “exceptionally” process special categories of personal data, “to the extent strictly necessary”, to detect and correct bias. Six conditions must all be met: no effective alternative, such as synthetic or anonymised data; technical limits on re-use and strong security; strict access controls; no transfer to other parties; deletion once the bias is corrected or the retention period ends; and records explaining why the processing was strictly necessary.</p>
+<p>Article 4a(2) extends the same legal basis to deployers of high-risk systems and to providers and deployers of other AI systems and models, with the same safeguards. It “does not create any obligation” to carry out bias detection. Article 10(5) is deleted, and Articles 10(1) and 10(6) now point to Article 4a(1). A recital calls bias detection and correction a substantial public interest.</p>
+<p>Maglietta said the change “does not make the use of sensitive data automatic or unrestricted.”</p>
+<p>Timing matters too. Under amended Article 113, the Act’s Chapter III requirements for Annex III high-risk systems apply from 2 December 2027, replacing the original date of 2 August 2026. Benooit said recruitment tools fall under Annex III. If he is right, the hiring-tool rules apply from the later date.</p>
+<h2>Where the rules stop</h2>
+<blockquote class="pull"><p>“A system might meet certain technical requirements while still producing unequal outcomes in practice.”</p><footer>Valentina Maglietta, researcher at Gender Five Plus NGO, Brussels</footer></blockquote>
+<p>Not every system is high-risk, both experts noted. Compliance is not the same as equal outcomes, either. “The legislation does not guarantee that an AI system will produce equal outcomes for men and women,” Benooit said.</p>
+<p>Enforcement is a further gap. Regulators need expertise and resources to spot discrimination that is not immediately visible, Benooit said. Maglietta added that people harmed by an algorithm may lack the information or resources to prove it, and that the Act does not completely address the social and institutional inequalities that shape how AI is built.</p>
+<p>Both said the fundamental-rights impact assessment in Article 27 applies only to specified deployers and uses, not universally. Benooit added that Article 26(7) requires deployers to inform workers’ representatives before using a high-risk system at work.</p>
+<h2>Beyond the Act</h2>
+<p>The Act sits alongside other law. Article 4a’s conditions apply in addition to the EU’s data-protection rules, according to the amended text. Benooit said companies must also meet existing duties under the GDPR and EU equality directives. Maglietta said compliance with the AI Act does not displace other equality and fundamental-rights obligations, and that the Charter of Fundamental Rights should guide interpretation.</p>
+<h2>What should change</h2>
+<blockquote class="pull"><p>“… innovation and fundamental-rights protection develop together, rather than treating them as competing objectives.”</p><footer>Jordy Benooit, EU public affairs</footer></blockquote>
+<p>Benooit named implementation as the biggest challenge, and called for greater awareness among companies of how historical inequalities become embedded in algorithms. Maglietta set out four steps, saying the aim should be AI that respects equality and human dignity, not merely AI that is technically efficient: gender-sensitive impact assessments and lifecycle evaluation; more diverse design teams; a voice for affected groups; and effective enforcement with accessible ways to challenge decisions.</p>
+</div></section>
+
+<section id="points" class="band"><div class="sec-head"><h2>Points of view</h2><p>Eight remarks from the two interviews, each with a graphic that visualises its idea. Swipe, use the arrows or the dots, or press the left and right arrow keys.</p></div>
+<div class="car" id="car" role="region" aria-roledescription="carousel" aria-label="Quotes from the two experts" tabindex="0">
+<div class="track" id="track">
+<figure class="card" role="group" aria-roledescription="slide" aria-label="1 of 8" data-src="S2-Q4">
+<div class="gfx"><svg viewBox="0 0 240 180" role="img" aria-label="Two bars. The left one is a neat block ticked as compliant. The right one is an uneven stack of misaligned blocks, standing for unequal outcomes."><line x1="14" y1="142" x2="226" y2="142" stroke="var(--ink)" stroke-width="2"/><rect x="34" y="62" width="68" height="80" fill="#cfcac0"/><circle cx="68" cy="38" r="15" fill="var(--accent)"/><path d="M60 38 l6 7 l12 -15" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><rect x="146" y="120" width="70" height="20" fill="var(--ink)"/><rect x="138" y="98" width="58" height="20" fill="var(--ink)"/><rect x="154" y="76" width="66" height="20" fill="var(--ink)"/><rect x="142" y="54" width="46" height="20" fill="var(--ink)"/><text x="68" y="162" text-anchor="middle" font-size="11" font-family="system-ui,sans-serif" fill="var(--ink)">compliant</text><text x="178" y="162" text-anchor="middle" font-size="11" font-family="system-ui,sans-serif" fill="var(--ink)">uneven outcomes</text></svg></div>
+<div><p class="lens">The gap</p><blockquote><p>&ldquo;A system might meet certain technical requirements while still producing unequal outcomes in practice.&rdquo;</p></blockquote><figcaption><strong>Valentina Maglietta</strong>, researcher at Gender Five Plus NGO, Brussels</figcaption></div>
+</figure>
+<figure class="card" role="group" aria-roledescription="slide" aria-label="2 of 8" data-src="S2-Q3">
+<div class="gfx"><svg viewBox="0 0 240 180" role="img" aria-label="A grid of dark squares with several cells missing, drawn as dashed outlines, standing for experiences absent from a dataset."><rect x="21" y="20" width="28" height="28" fill="var(--ink)"/><rect x="55" y="20" width="28" height="28" fill="var(--ink)"/><rect x="89" y="20" width="28" height="28" fill="var(--ink)"/><rect x="123" y="20" width="28" height="28" fill="var(--ink)"/><rect x="157" y="20" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><rect x="191" y="20" width="28" height="28" fill="var(--ink)"/><rect x="21" y="54" width="28" height="28" fill="var(--ink)"/><rect x="55" y="54" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><rect x="89" y="54" width="28" height="28" fill="var(--ink)"/><rect x="123" y="54" width="28" height="28" fill="var(--ink)"/><rect x="157" y="54" width="28" height="28" fill="var(--ink)"/><rect x="191" y="54" width="28" height="28" fill="var(--ink)"/><rect x="21" y="88" width="28" height="28" fill="var(--ink)"/><rect x="55" y="88" width="28" height="28" fill="var(--ink)"/><rect x="89" y="88" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><rect x="123" y="88" width="28" height="28" fill="var(--ink)"/><rect x="157" y="88" width="28" height="28" fill="var(--ink)"/><rect x="191" y="88" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><rect x="21" y="122" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><rect x="55" y="122" width="28" height="28" fill="var(--ink)"/><rect x="89" y="122" width="28" height="28" fill="var(--ink)"/><rect x="123" y="122" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><rect x="157" y="122" width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="4 3"/><rect x="191" y="122" width="28" height="28" fill="var(--ink)"/><text x="120" y="172" text-anchor="middle" font-size="11" font-family="system-ui,sans-serif" fill="var(--ink)">whose experiences are missing?</text></svg></div>
+<div><p class="lens">The data lens</p><blockquote><p>&ldquo;We also need to ask who is represented in that dataset and whose experiences are missing.&rdquo;</p></blockquote><figcaption><strong>Valentina Maglietta</strong>, researcher at Gender Five Plus NGO, Brussels</figcaption></div>
+</figure>
+<figure class="card" role="group" aria-roledescription="slide" aria-label="3 of 8" data-src="S1-Q5">
+<div class="gfx"><svg viewBox="0 0 240 180" role="img" aria-label="A lopsided balance scale. The heavy left pan holds a tick for compliance and sits low. The right pan, marked with an equals sign for equality, sits high."><rect x="80" y="146" width="80" height="8" fill="var(--ink)"/><rect x="117" y="34" width="6" height="112" fill="var(--ink)"/><line x1="36" y1="72" x2="204" y2="44" stroke="var(--ink)" stroke-width="5"/><circle cx="120" cy="58" r="8" fill="var(--accent)"/><line x1="36" y1="72" x2="14" y2="116" stroke="var(--ink)" stroke-width="2"/><line x1="36" y1="72" x2="58" y2="116" stroke="var(--ink)" stroke-width="2"/><rect x="8" y="116" width="56" height="8" fill="var(--ink)"/><circle cx="36" cy="100" r="12" fill="var(--accent)"/><path d="M30 100 l4 5 l9 -11" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><line x1="204" y1="44" x2="182" y2="88" stroke="var(--ink)" stroke-width="2"/><line x1="204" y1="44" x2="226" y2="88" stroke="var(--ink)" stroke-width="2"/><rect x="176" y="88" width="56" height="8" fill="var(--ink)"/><rect x="192" y="68" width="24" height="5" fill="var(--ink)"/><rect x="192" y="77" width="24" height="5" fill="var(--ink)"/><text x="36" y="144" text-anchor="middle" font-size="10" font-family="system-ui,sans-serif" fill="var(--ink)">compliance</text><text x="204" y="112" text-anchor="middle" font-size="10" font-family="system-ui,sans-serif" fill="var(--ink)">equality</text></svg></div>
+<div><p class="lens">The compliance lens</p><blockquote><p>&ldquo;Compliance with technical requirements does not automatically mean that discrimination has disappeared.&rdquo;</p></blockquote><figcaption><strong>Jordy Benooit</strong>, EU public affairs, MSc EU Studies &amp; LLM EU Law</figcaption></div>
+</figure>
+<figure class="card" role="group" aria-roledescription="slide" aria-label="4 of 8" data-src="S2-Q5">
+<div class="gfx"><svg viewBox="0 0 240 180" role="img" aria-label="A tall wall with a short ladder beside it. A dashed arrow shows the climb that the ladder cannot complete, standing for the difficulty of challenging an algorithmic decision."><line x1="10" y1="150" x2="230" y2="150" stroke="var(--ink)" stroke-width="2"/><rect x="108" y="20" width="24" height="130" fill="var(--ink)"/><rect x="150" y="110" width="40" height="40" fill="#cfcac0"/><rect x="156" y="102" width="28" height="8" fill="#cfcac0"/><line x1="44" y1="150" x2="44" y2="96" stroke="var(--ink)" stroke-width="4"/><line x1="76" y1="150" x2="76" y2="96" stroke="var(--ink)" stroke-width="4"/><line x1="44" y1="108" x2="76" y2="108" stroke="var(--ink)" stroke-width="3"/><line x1="44" y1="124" x2="76" y2="124" stroke="var(--ink)" stroke-width="3"/><line x1="44" y1="140" x2="76" y2="140" stroke="var(--ink)" stroke-width="3"/><path d="M60 90 L60 34 L100 34" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="6 5"/><polygon points="100,26 100,42 112,34" fill="var(--accent)"/><text x="60" y="170" text-anchor="middle" font-size="11" font-family="system-ui,sans-serif" fill="var(--ink)">the reach falls short</text></svg></div>
+<div><p class="lens">The access lens</p><blockquote><p>&ldquo;Even if a system is discriminatory, individuals may not have sufficient information or resources to demonstrate that discrimination has occurred.&rdquo;</p></blockquote><figcaption><strong>Valentina Maglietta</strong>, researcher at Gender Five Plus NGO, Brussels</figcaption></div>
+</figure>
+<figure class="card" role="group" aria-roledescription="slide" aria-label="5 of 8" data-src="S1-Q5">
+<div class="gfx"><svg viewBox="0 0 240 180" role="img" aria-label="A magnifying circle over a field of dots. Inside the lens, a few faint dots that were nearly invisible show up in the accent colour, standing for discrimination that needs expertise to see."><circle cx="26" cy="22" r="7" fill="#cfcac0"/><circle cx="52" cy="22" r="7" fill="#cfcac0"/><circle cx="78" cy="22" r="7" fill="#cfcac0"/><circle cx="104" cy="22" r="7" fill="#cfcac0"/><circle cx="130" cy="22" r="7" fill="#cfcac0"/><circle cx="156" cy="22" r="7" fill="#cfcac0"/><circle cx="182" cy="22" r="7" fill="#cfcac0"/><circle cx="208" cy="22" r="7" fill="#cfcac0"/><circle cx="26" cy="50" r="7" fill="#cfcac0"/><circle cx="52" cy="50" r="7" fill="#cfcac0"/><circle cx="78" cy="50" r="7" fill="none" stroke="#e1ddd4" stroke-width="2"/><circle cx="104" cy="50" r="7" fill="#cfcac0"/><circle cx="130" cy="50" r="7" fill="#cfcac0"/><circle cx="156" cy="50" r="7" fill="none" stroke="#e1ddd4" stroke-width="2"/><circle cx="182" cy="50" r="7" fill="#cfcac0"/><circle cx="208" cy="50" r="7" fill="#cfcac0"/><circle cx="26" cy="78" r="7" fill="#cfcac0"/><circle cx="52" cy="78" r="7" fill="#cfcac0"/><circle cx="78" cy="78" r="7" fill="#cfcac0"/><circle cx="104" cy="78" r="7" fill="#cfcac0"/><circle cx="130" cy="78" r="7" fill="none" stroke="#e1ddd4" stroke-width="2"/><circle cx="156" cy="78" r="7" fill="#cfcac0"/><circle cx="182" cy="78" r="7" fill="#cfcac0"/><circle cx="208" cy="78" r="7" fill="#cfcac0"/><circle cx="26" cy="106" r="7" fill="#cfcac0"/><circle cx="52" cy="106" r="7" fill="#cfcac0"/><circle cx="78" cy="106" r="7" fill="#cfcac0"/><circle cx="104" cy="106" r="7" fill="none" stroke="#e1ddd4" stroke-width="2"/><circle cx="130" cy="106" r="7" fill="#cfcac0"/><circle cx="156" cy="106" r="7" fill="#cfcac0"/><circle cx="182" cy="106" r="7" fill="#cfcac0"/><circle cx="208" cy="106" r="7" fill="#cfcac0"/><circle cx="26" cy="134" r="7" fill="#cfcac0"/><circle cx="52" cy="134" r="7" fill="#cfcac0"/><circle cx="78" cy="134" r="7" fill="#cfcac0"/><circle cx="104" cy="134" r="7" fill="#cfcac0"/><circle cx="130" cy="134" r="7" fill="#cfcac0"/><circle cx="156" cy="134" r="7" fill="#cfcac0"/><circle cx="182" cy="134" r="7" fill="#cfcac0"/><circle cx="208" cy="134" r="7" fill="#cfcac0"/><defs><clipPath id="lensclip"><circle cx="120" cy="78" r="46"/></clipPath></defs><g clip-path="url(#lensclip)"><rect x="60" y="30" width="120" height="100" fill="#fff"/><circle cx="26" cy="22" r="7" fill="var(--ink)"/><circle cx="52" cy="22" r="7" fill="var(--ink)"/><circle cx="78" cy="22" r="7" fill="var(--ink)"/><circle cx="104" cy="22" r="7" fill="var(--ink)"/><circle cx="130" cy="22" r="7" fill="var(--ink)"/><circle cx="156" cy="22" r="7" fill="var(--ink)"/><circle cx="182" cy="22" r="7" fill="var(--ink)"/><circle cx="208" cy="22" r="7" fill="var(--ink)"/><circle cx="26" cy="50" r="7" fill="var(--ink)"/><circle cx="52" cy="50" r="7" fill="var(--ink)"/><circle cx="78" cy="50" r="7" fill="var(--accent)"/><circle cx="104" cy="50" r="7" fill="var(--ink)"/><circle cx="130" cy="50" r="7" fill="var(--ink)"/><circle cx="156" cy="50" r="7" fill="var(--accent)"/><circle cx="182" cy="50" r="7" fill="var(--ink)"/><circle cx="208" cy="50" r="7" fill="var(--ink)"/><circle cx="26" cy="78" r="7" fill="var(--ink)"/><circle cx="52" cy="78" r="7" fill="var(--ink)"/><circle cx="78" cy="78" r="7" fill="var(--ink)"/><circle cx="104" cy="78" r="7" fill="var(--ink)"/><circle cx="130" cy="78" r="7" fill="var(--accent)"/><circle cx="156" cy="78" r="7" fill="var(--ink)"/><circle cx="182" cy="78" r="7" fill="var(--ink)"/><circle cx="208" cy="78" r="7" fill="var(--ink)"/><circle cx="26" cy="106" r="7" fill="var(--ink)"/><circle cx="52" cy="106" r="7" fill="var(--ink)"/><circle cx="78" cy="106" r="7" fill="var(--ink)"/><circle cx="104" cy="106" r="7" fill="var(--accent)"/><circle cx="130" cy="106" r="7" fill="var(--ink)"/><circle cx="156" cy="106" r="7" fill="var(--ink)"/><circle cx="182" cy="106" r="7" fill="var(--ink)"/><circle cx="208" cy="106" r="7" fill="var(--ink)"/><circle cx="26" cy="134" r="7" fill="var(--ink)"/><circle cx="52" cy="134" r="7" fill="var(--ink)"/><circle cx="78" cy="134" r="7" fill="var(--ink)"/><circle cx="104" cy="134" r="7" fill="var(--ink)"/><circle cx="130" cy="134" r="7" fill="var(--ink)"/><circle cx="156" cy="134" r="7" fill="var(--ink)"/><circle cx="182" cy="134" r="7" fill="var(--ink)"/><circle cx="208" cy="134" r="7" fill="var(--ink)"/></g><circle cx="120" cy="78" r="46" fill="none" stroke="var(--ink)" stroke-width="5"/><line x1="154" y1="112" x2="188" y2="152" stroke="var(--ink)" stroke-width="8" stroke-linecap="round"/></svg></div>
+<div><p class="lens">The enforcement lens</p><blockquote><p>&ldquo;Regulators need sufficient expertise and resources to understand how these systems work and identify discrimination that might not be immediately visible.&rdquo;</p></blockquote><figcaption><strong>Jordy Benooit</strong>, EU public affairs, MSc EU Studies &amp; LLM EU Law</figcaption></div>
+</figure>
+<figure class="card" role="group" aria-roledescription="slide" aria-label="6 of 8" data-src="S2-Q3">
+<div class="gfx"><svg viewBox="0 0 240 180" role="img" aria-label="A dark lock plate with a keyhole. A single accent-coloured data point sits in the keyhole, ringed by a dashed line, standing for tightly limited use of sensitive data."><rect x="70" y="14" width="100" height="152" rx="14" fill="var(--ink)"/><circle cx="120" cy="66" r="20" fill="var(--paper)"/><path d="M110 78 L130 78 L138 128 L102 128 Z" fill="var(--paper)"/><circle cx="120" cy="66" r="7" fill="var(--accent)"/><circle cx="120" cy="66" r="34" fill="none" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5 5"/></svg></div>
+<div><p class="lens">The safeguards lens</p><blockquote><p>&ldquo;Article 4a allows such data to be processed only exceptionally, where strictly necessary, and subject to safeguards; it does not make the use of sensitive data automatic or unrestricted.&rdquo;</p></blockquote><figcaption><strong>Valentina Maglietta</strong>, researcher at Gender Five Plus NGO, Brussels</figcaption></div>
+</figure>
+<figure class="card" role="group" aria-roledescription="slide" aria-label="7 of 8" data-src="S1-Q7">
+<div class="gfx"><svg viewBox="0 0 240 180" role="img" aria-label="Three tall dashed outlines, each only partly filled with solid accent colour, standing for requirements on paper that are only partly translated into practice."><line x1="14" y1="146" x2="226" y2="146" stroke="var(--ink)" stroke-width="2"/><rect x="34" y="36" width="40" height="110" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="6 5"/><rect x="34" y="86" width="40" height="60" fill="var(--accent)"/><rect x="100" y="36" width="40" height="110" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="6 5"/><rect x="100" y="114" width="40" height="32" fill="var(--accent)"/><rect x="166" y="36" width="40" height="110" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="6 5"/><rect x="166" y="68" width="40" height="78" fill="var(--accent)"/><text x="120" y="168" text-anchor="middle" font-size="11" font-family="system-ui,sans-serif" fill="var(--ink)">the plan versus what is built</text></svg></div>
+<div><p class="lens">The delivery lens</p><blockquote><p>&ldquo;The EU has developed an ambitious regulatory framework, but the real challenge is ensuring that its requirements translate into meaningful changes in how AI systems are developed and deployed.&rdquo;</p></blockquote><figcaption><strong>Jordy Benooit</strong>, EU public affairs, MSc EU Studies &amp; LLM EU Law</figcaption></div>
+</figure>
+<figure class="card" role="group" aria-roledescription="slide" aria-label="8 of 8" data-src="S2-Q7">
+<div class="gfx"><svg viewBox="0 0 240 180" role="img" aria-label="Four rising steps that reach a level line marked with an equals sign, standing for technology that respects equality."><line x1="14" y1="150" x2="226" y2="150" stroke="var(--ink)" stroke-width="2"/><rect x="24" y="122" width="48" height="28" fill="#cfcac0"/><rect x="72" y="98" width="48" height="52" fill="#cfcac0"/><rect x="120" y="74" width="48" height="76" fill="#cfcac0"/><rect x="168" y="50" width="48" height="100" fill="var(--accent)"/><line x1="14" y1="44" x2="226" y2="44" stroke="var(--ink)" stroke-width="2" stroke-dasharray="3 5"/><rect x="164" y="16" width="24" height="5" fill="var(--ink)"/><rect x="164" y="25" width="24" height="5" fill="var(--ink)"/></svg></div>
+<div><p class="lens">The way forward</p><blockquote><p>&ldquo;The ultimate objective should not simply be to develop AI that is technically efficient, but AI that respects equality and human dignity.&rdquo;</p></blockquote><figcaption><strong>Valentina Maglietta</strong>, researcher at Gender Five Plus NGO, Brussels</figcaption></div>
+</figure>
+</div>
+<div class="ctrl"><button class="arr" id="prev" type="button" aria-label="Previous quote">&larr;</button><div class="dots" id="dots"></div><button class="arr" id="next" type="button" aria-label="Next quote">&rarr;</button></div>
+<p class="sans" id="pos" aria-live="polite" style="text-align:center;margin:.25rem 0 0;font-size:.85rem;color:var(--muted)">Quote 1 of 8</p>
+</div></section>
+
+<section id="myths"><div class="sec-head"><h2>Myth vs what the law says</h2><p>Select a card to reveal the answer. The status label shows how far the sources back it: the amended law, an expert view, or a mix of the two.</p></div>
+<div class="myths" id="mythgrid">
+<div class="myth" data-src="S3-Art10; S3-Art4a; S1-Q2; S2-Q3">
+<button type="button" aria-expanded="false" aria-controls="mp1" id="mb1"><span class="m">Myth</span>&ldquo;The 2026 amendment scrapped the Act’s bias safeguards&rdquo;<span class="h">Select to reveal what the law says</span></button>
+<div class="panel" id="mp1" role="region" aria-labelledby="mb1" hidden>
+<span class="chip law">Backed by the amended law</span>
+<h3>What the law says</h3><p>Article 10(5) was deleted, but the amending regulation inserts Article 4a, which sets a limited legal basis and six conditions for processing sensitive data to detect and correct bias. Articles 10(1) and 10(6) now refer to Article 4a(1). The amending regulation also says its simplification should not reduce the level of protection for fundamental rights.</p>
+<h3>What experts add</h3><p>Benooit said Article 10(5) was deleted because its subject matter is now addressed in Article 4a. Maglietta said the provision moved from Article 10(5) into Article 4a.</p>
+</div></div>
+<div class="myth" data-src="S3-Art4a; S2-Q3; S1-Q6">
+<button type="button" aria-expanded="false" aria-controls="mp2" id="mb2"><span class="m">Myth</span>&ldquo;Sensitive data can be used freely to check for bias&rdquo;<span class="h">Select to reveal what the law says</span></button>
+<div class="panel" id="mp2" role="region" aria-labelledby="mb2" hidden>
+<span class="chip law">Backed by the amended law</span>
+<h3>What the law says</h3><p>Providers of high-risk systems may process special categories of personal data only “exceptionally” and “to the extent strictly necessary”. All six conditions in Article 4a(1) must be met, in addition to the EU data-protection rules.</p>
+<h3>What experts add</h3><p>Maglietta said Article 4a does not make the use of sensitive data automatic or unrestricted. Benooit said it applies only where strict conditions and safeguards are met.</p>
+</div></div>
+<div class="myth" data-src="S3-Art4a(2); S1-Q5; S2-Q5">
+<button type="button" aria-expanded="false" aria-controls="mp3" id="mb3"><span class="m">Myth</span>&ldquo;Everyone using AI must now test for bias&rdquo;<span class="h">Select to reveal what the law says</span></button>
+<div class="panel" id="mp3" role="region" aria-labelledby="mb3" hidden>
+<span class="chip part">Partly backed</span>
+<h3>What the law says</h3><p>Article 4a(2) lets deployers of high-risk systems, and providers and deployers of other AI systems and models, process sensitive data for bias detection under the same safeguards. It “does not create any obligation” to do so. Whether other duties apply cannot be checked here, because the original Act is not among our sources.</p>
+<h3>What experts add</h3><p>Both experts said not every AI system is high-risk. Benooit described the Article 10 data duties as falling on providers of high-risk systems.</p>
+</div></div>
+<div class="myth" data-src="S2-Q4; S1-Q5">
+<button type="button" aria-expanded="false" aria-controls="mp4" id="mb4"><span class="m">Myth</span>&ldquo;Passing the AI Act means a system cannot discriminate&rdquo;<span class="h">Select to reveal what the law says</span></button>
+<div class="panel" id="mp4" role="region" aria-labelledby="mb4" hidden>
+<span class="chip exp">Expert view</span>
+<h3>What the law says</h3><p>The amending regulation, the only legal text used for this article, does not say that compliance rules out discrimination. The original Act was not available to check.</p>
+<h3>What experts add</h3><p>Maglietta said an AI system could comply and still discriminate against women, and that compliance does not displace other equality and fundamental-rights laws. Benooit said compliance does not automatically mean discrimination has disappeared.</p>
+</div></div>
+<div class="myth" data-src="S1-Q3; S2-Q2">
+<button type="button" aria-expanded="false" aria-controls="mp5" id="mb5"><span class="m">Myth</span>&ldquo;The AI Act is a gender-equality law&rdquo;<span class="h">Select to reveal what the law says</span></button>
+<div class="panel" id="mp5" role="region" aria-labelledby="mb5" hidden>
+<span class="chip exp">Expert view</span>
+<h3>What the law says</h3><p>The amending regulation’s bias provisions speak of discrimination prohibited under Union law and do not single out gender. A recital describes bias detection as protecting people from adverse effects, including discrimination.</p>
+<h3>What experts add</h3><p>Maglietta called the Act primarily a regulatory framework for AI, not a comprehensive gender-equality instrument. Benooit said it sets no specific gender-equality framework for every AI system and relies on existing equality law.</p>
+</div></div>
+<div class="myth" data-src="S1-Q4; S3-Art113">
+<button type="button" aria-expanded="false" aria-controls="mp6" id="mb6"><span class="m">Myth</span>&ldquo;The hiring-AI rules already apply&rdquo;<span class="h">Select to reveal what the law says</span></button>
+<div class="panel" id="mp6" role="region" aria-labelledby="mb6" hidden>
+<span class="chip part">Partly backed</span>
+<h3>What the law says</h3><p>Under amended Article 113, the high-risk requirements in Chapter III, Sections 1 to 3, apply to Annex III systems from 2 December 2027. Recital 40 gives the original date as 2 August 2026.</p>
+<h3>What experts add</h3><p>Benooit said Annex III, point 4, covers recruitment and selection. Our sources cannot check that, so the hiring-tool timing holds only if he is right.</p>
+</div></div>
+</div></section>
+
+<section id="timeline" class="band"><div class="sec-head"><h2>Timeline</h2><p>Dates as stated in the amending regulation.</p></div>
+<ol class="tl">
+<li><time datetime="2024-08-01">1 August 2024</time><h3>The AI Act enters into force</h3><p>The amending regulation records that Regulation (EU) 2024/1689 entered into force on this date.</p></li>
+<li><time datetime="2025-02-02">2 February 2025</time><h3>Chapters I and II apply</h3><p>Amended Article 113 says these chapters apply from this date, with listed exceptions in Article 5 that apply from 2 December 2026.</p></li>
+<li><time datetime="2026-07-08">8 July 2026</time><h3>The Digital Omnibus on AI is adopted</h3><p>Regulation (EU) 2026/1744 is dated 8 July 2026 and amends the AI Act.</p></li>
+<li><time datetime="2026-07-24">24 July 2026</time><h3>Published in the Official Journal</h3><p>The regulation enters into force on the third day following publication.</p></li>
+<li><time datetime="2026-08-02">2 August 2026</time><h3>The original general date of application</h3><p>Recital 40 gives this as the initial date for the high-risk obligations in Chapter III, Sections 1 to 3. The amendment replaces it.</p></li>
+<li><time datetime="2027-12-02">2 December 2027</time><h3>Annex III high-risk obligations apply</h3><p>Chapter III, Sections 1 to 3 apply from this date to systems classified as high-risk under Article 6(2) and Annex III.</p></li>
+<li><time datetime="2028-08-02">2 August 2028</time><h3>Annex I high-risk obligations apply</h3><p>The same sections apply from this date to systems classified as high-risk under Article 6(1) and Annex I.</p></li>
+</ol>
+</section>
+
+<section id="ask"><div class="sec-head"><h2>Ask the sources</h2><p>Questions answered only from the two documents behind this article.</p></div>
+<div class="chat">
+<p class="notice">Rule-based assistant, not live AI. Not legal advice.</p>
+<div class="chips" id="chips" role="group" aria-label="Suggested questions"></div>
+<div class="log" id="log" role="log" aria-live="polite" aria-label="Conversation"><div class="msg b">Ask a question about gender bias, the 2026 amendment or the dates, or choose one above.</div></div>
+<form id="form" autocomplete="off"><label class="sans" for="q" style="position:absolute;left:-999px">Your question</label><input id="q" type="text" placeholder="Type a question" maxlength="200"><button type="submit">Ask</button></form>
+</div></section>
+
+<section id="references" class="band"><div class="sec-head"><h2>References</h2></div>
+<div class="refs">
+<p>European Parliament &amp; Council of the European Union. (2026). <em>Regulation (EU) 2026/1744 of the European Parliament and of the Council of 8 July 2026 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 as regards the simplification of the implementation of harmonised rules on artificial intelligence (Digital Omnibus on AI)</em>. Official Journal of the European Union, L, 24.7.2026. <a href="http://data.europa.eu/eli/reg/2026/1744/oj">http://data.europa.eu/eli/reg/2026/1744/oj</a></p>
+<h3>Interviews</h3>
+<p>Benooit, J. (personal communication, [date of interview]). [Interview format]. Interview with Khatimat Abilova. Jordy Benooit, EU public affairs; MSc EU Studies &amp; LLM EU Law.</p>
+<p>Maglietta, V. (personal communication, [date of interview]). [Interview format]. Interview with Khatimat Abilova. Valentina Maglietta, researcher at Gender Five Plus NGO, Brussels; PhD in European Constitutional Law, Autonomous University of Barcelona.</p>
+</div></section>
+</main>
+<footer class="site"><p>[Editor's note on AI assistance and verification - reporter to add or delete]</p></footer>
+
+<script>
+(function(){
+"use strict";
+/* ---------- nav highlight ---------- */
+var links=[].slice.call(document.querySelectorAll(".nav a"));
+var secs=links.map(function(a){return document.querySelector(a.getAttribute("href"));});
+function onScroll(){var y=window.scrollY+120,cur=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});links.forEach(function(a,i){if(i===cur)a.classList.add("on");else a.classList.remove("on");});}
+window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+
+/* ---------- carousel ---------- */
+var track=document.getElementById("track"),car=document.getElementById("car");
+var slides=[].slice.call(track.children),dots=document.getElementById("dots"),pos=document.getElementById("pos"),idx=0;
+slides.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Go to quote "+(i+1)+" of "+slides.length);b.addEventListener("click",function(){go(i);});dots.appendChild(b);});
+function mark(i){idx=i;[].forEach.call(dots.children,function(d,k){if(k===i)d.setAttribute("aria-current","true");else d.removeAttribute("aria-current");});pos.textContent="Quote "+(i+1)+" of "+slides.length;}
+function go(i){i=Math.max(0,Math.min(slides.length-1,i));track.scrollTo({left:i*track.clientWidth,behavior:"smooth"});mark(i);}
+var tick;track.addEventListener("scroll",function(){clearTimeout(tick);tick=setTimeout(function(){var i=Math.round(track.scrollLeft/track.clientWidth);if(i!==idx)mark(i);},60);},{passive:true});
+document.getElementById("prev").addEventListener("click",function(){go(idx-1);});
+document.getElementById("next").addEventListener("click",function(){go(idx+1);});
+car.addEventListener("keydown",function(e){if(e.target!==car)return;if(e.key==="ArrowRight"){e.preventDefault();go(idx+1);}else if(e.key==="ArrowLeft"){e.preventDefault();go(idx-1);}});
+document.addEventListener("keydown",function(e){var t=e.target;if(t&&(t.tagName==="INPUT"||t.tagName==="TEXTAREA"))return;var r=car.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0&&t!==car){if(e.key==="ArrowRight"){go(idx+1);}else if(e.key==="ArrowLeft"){go(idx-1);}}});
+window.addEventListener("resize",function(){track.scrollTo({left:idx*track.clientWidth});});
+mark(0);
+
+/* ---------- myths ---------- */
+[].forEach.call(document.querySelectorAll(".myth>button"),function(b){b.addEventListener("click",function(){var open=b.getAttribute("aria-expanded")==="true";b.setAttribute("aria-expanded",open?"false":"true");document.getElementById(b.getAttribute("aria-controls")).hidden=open;});});
+
+/* ---------- chatbot ---------- */
+var FALLBACK="I can only answer from the two documents behind this article, and they don't cover that.";
+var KB=[
+{v:["what did the 2026 amendment do","what changed in 2026","what is the digital omnibus"],k:["2026","amendment","amended","omnibus","changed","change","amend"],a:"According to the amended Act, the 2026 Digital Omnibus on AI inserted a new Article 4a, deleted Article 10(5), and changed Article 10(1) and (6) to refer to Article 4a(1). It also moved the dates from which the high-risk obligations apply."},
+{v:["can companies use sensitive data to check bias","can sensitive data be used to detect bias","why is sensitive data allowed for bias checks"],k:["sensitive","special categories","special category","personal data","4a","check bias","detect bias","bias detection","public interest"],a:"Only exceptionally, where strictly necessary and with safeguards, according to Article 4a of the amended Act. It creates no duty to do so. The amended Act also describes bias detection and correction as a substantial public interest."},
+{v:["what conditions apply to article 4a","what safeguards apply to sensitive data"],k:["conditions","condition","safeguards","safeguard","delete","deleted","deletion","synthetic","anonymised","anonymized","access controls","records","transfer"],a:"According to the amended Act, all of these must be met: bias detection cannot be done effectively with other data, such as synthetic or anonymised data; the data face technical limits on re-use and strong security; access is strictly controlled and documented; the data are not passed to other parties; the data are deleted once the bias is corrected or the retention period ends; and the processing records explain why it was strictly necessary."},
+{v:["do deployers have to test for bias","does everyone have to test for bias","is bias testing compulsory under article 4a"],k:["obligation","obliged","must","have to","required","compulsory","mandatory","everyone","deployer","deployers","other ai systems"],a:"According to the amended Act, Article 4a(2) extends the legal basis to deployers of high-risk systems and to providers and deployers of other AI systems and models, with the same safeguards. It says this \"does not create any obligation\" to carry out bias detection and correction. Other duties cannot be checked here, because the original Act is not among our sources."},
+{v:["what happened to article 10(5)","was article 10(5) deleted"],k:["10 5","10(5)","article 10 5","deleted","scrapped","removed","repealed"],a:"According to the amended Act, Article 10(5) was deleted, and Article 10(1) and (6) now refer to Article 4a(1). Benooit said its subject matter is now handled in Article 4a. Maglietta said the special-category-data provision moved from Article 10(5) into Article 4a."},
+{v:["when do the high-risk rules apply","what are the application dates","when does the ai act apply"],k:["when","date","dates","deadline","2027","2028","2026","timeline","apply from","come into force","in force","enter into force"],a:"According to the amended Act, the high-risk requirements in Chapter III, Sections 1 to 3, apply from 2 December 2027 for Annex III systems and from 2 August 2028 for Annex I systems. The original date was 2 August 2026. The Act first entered into force on 1 August 2024."},
+{v:["do the hiring ai rules already apply","are recruitment tools high-risk","does the ai act cover cv screening"],k:["hiring","recruitment","recruit","recruiting","employment","annex iii","cv","job","jobs","employer","employers","workers","already apply"],a:"Benooit said Annex III, point 4, covers recruitment and selection and other employment uses. The amended Act says the high-risk obligations for Annex III systems apply from 2 December 2027, so the hiring-tool rules would apply from that date if he is right. Our sources cannot check what point 4 says."},
+{v:["is the ai act a gender equality law","does the ai act mention gender"],k:["gender equality","gender","women","woman","female","equality law","mention gender"],a:"Not mainly, according to the interviewees. Benooit said gender discrimination is covered through broader provisions on discrimination and fundamental rights, not a dedicated gender-equality framework. Maglietta called the Act primarily a regulatory framework for AI, not a comprehensive gender-equality instrument."},
+{v:["can an ai system comply and still discriminate","does compliance guarantee fairness","does passing the ai act mean no discrimination"],k:["comply","compliance","compliant","still discriminate","guarantee","guarantees","equal outcomes","cannot discriminate","fair","fairness","unequal"],a:"Yes, according to both experts. Maglietta said a system might meet certain technical requirements while still producing unequal outcomes. Benooit said the legislation does not guarantee equal outcomes for men and women, and that compliance does not automatically mean discrimination has disappeared."},
+{v:["is all ai high-risk","does the act cover every ai system","which systems are covered"],k:["every","not every","all ai","high-risk","high risk","scope","covered","risk-based","risk based","classified"],a:"No, according to both experts. Benooit said not every AI system falls into the high-risk category. Maglietta said the Act's risk-based approach means not every system that might affect women is automatically high-risk."},
+{v:["how does the ai act relate to the gdpr","what about other equality laws"],k:["gdpr","data protection","equality directives","directives","charter","other laws","other law","fundamental rights","alongside"],a:"According to the amended Act, Article 4a's conditions apply in addition to the EU's data-protection rules. Benooit said the AI Act works alongside the GDPR and the EU equality directives. Maglietta said compliance with the AI Act does not displace other equality and fundamental-rights laws, and pointed to the Charter of Fundamental Rights."},
+{v:["who can challenge a discriminatory decision","how can people challenge an algorithm"],k:["challenge","appeal","complain","complaint","remedy","justice","individuals","individual","article 27","27","impact assessment","proof","prove"],a:"Maglietta said individuals may lack the information or resources to show that discrimination occurred, so effective access to justice is needed. Both experts said the fundamental-rights impact assessment in Article 27 applies only to specified deployers and uses, not to everyone. The original Act is not among our sources, so we could not check that."},
+{v:["is enforcement a problem","do regulators have enough resources"],k:["enforcement","enforce","regulator","regulators","authorities","expertise","resources","supervision","implementation"],a:"Benooit said regulators need enough expertise and resources to understand these systems and spot discrimination that is not immediately visible. He named implementation as the biggest challenge. Maglietta said enforcement must be effective, with accessible ways to challenge discriminatory decisions."},
+{v:["what do the experts recommend","what should change","how can the eu do better"],k:["recommend","recommendation","recommendations","should change","improve","strengthen","better","diversity","participation","future","way forward"],a:"Maglietta recommended gender-sensitive impact assessments and evaluation throughout a system's lifecycle, more diversity among designers and evaluators, a voice for affected groups, and effective enforcement. Benooit called for better implementation and greater company awareness of how historical inequalities can become embedded in algorithms."},
+{v:["what must providers do about biased data","what does article 10 require","how should datasets be checked"],k:["dataset","datasets","data governance","article 10","representative","representativeness","underrepresented","intersectionality","providers","training data","healthcare"],a:"Benooit said Article 10 requires providers of high-risk systems to examine datasets for possible biases and to take measures to detect, prevent and mitigate them, and that Article 10(3) covers representativeness. Maglietta said it is not enough for a dataset to be large: the question is who is represented and whose experiences are missing. The original Act is not among our sources, so we could not check their descriptions."}
+];
+var WEAK=" when date dates must fair job jobs every change amend woman women female gender better future ";
+function norm(s){return " "+s.toLowerCase().replace(/[^a-z0-9]+/g," ").trim()+" ";}
+var STOP=" the a an of to in on for and or is are do does can what how it that this with about be by at as my i you ";
+function toks(s){return norm(s).trim().split(" ").filter(function(w){return w&&STOP.indexOf(" "+w+" ")<0;});}
+function answer(q){
+ var n=norm(q),qt=toks(q),best=-1,bs=0;
+ KB.forEach(function(e,i){var s=0;
+  e.k.forEach(function(k){var nk=norm(k);if(n.indexOf(nk)>-1){s+=(nk.trim().indexOf(" ")>-1||(nk.trim().length>3&&WEAK.indexOf(nk)<0)||/[0-9]/.test(nk))?2:1;}});
+  e.v.forEach(function(v){var vt=toks(v),c=0;qt.forEach(function(w){if(vt.indexOf(w)>-1)c++;});if(vt.length&&c/Math.max(vt.length,qt.length||1)>=.6)s+=3;});
+  if(s>bs){bs=s;best=i;}});
+ return bs>=2?KB[best].a:FALLBACK;}
+var log=document.getElementById("log"),form=document.getElementById("form"),inp=document.getElementById("q");
+function say(t,c){var d=document.createElement("div");d.className="msg "+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight;}
+function ask(q){q=q.trim();if(!q)return;say(q,"u");say(answer(q),"b");}
+form.addEventListener("submit",function(e){e.preventDefault();ask(inp.value);inp.value="";inp.focus();});
+var chipBox=document.getElementById("chips");
+["Can companies use sensitive data to check bias?","What did the 2026 amendment change?","Can an AI system comply and still discriminate?","When do the high-risk rules apply?","Do the hiring-AI rules already apply?"].forEach(function(t){var b=document.createElement("button");b.type="button";b.textContent=t;b.addEventListener("click",function(){ask(t);});chipBox.appendChild(b);});
+})();
+</script>
+</body>
+</html>
